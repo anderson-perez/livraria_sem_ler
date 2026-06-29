@@ -5,7 +5,7 @@
 
 typedef unsigned int opc_t;
 typedef char string[T_STR];
-typedef unsigned int uint_t
+typedef unsigned int uint_t;
 
 typedef struct livro {    
     uint_t id;
