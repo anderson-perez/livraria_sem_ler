@@ -1,4 +1,5 @@
 #include "../include/cadastros.h"
+#include "../include/utils.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,12 +13,15 @@ livro_t novo_livro()
 
     printf("Titulo do livro.....: ");
     fgets(novo.titulo, T_STR, stdin);
+    remover_enter(novo.titulo);
 
     printf("Autor do livro......: ");
     fgets(novo.autor_principal, T_STR, stdin);
+    remover_enter(novo.autor_principal);
 
     printf("Editora do livro....: ");
     fgets(novo.editora, T_STR, stdin);
+    remover_enter(novo.editora);
 
     printf("Ano lancamento......: ");
     scanf("%i", &novo.ano_lancamento);
@@ -35,6 +39,7 @@ cliente_t novo_cliente()
 
     printf("Nome do cliente...: ");
     fgets(novo.nome, T_STR, stdin);
+    remover_enter(novo.nome);
 
     printf("Idade do cliente..: ");
     scanf("%i", &novo.idade);
