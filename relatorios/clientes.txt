@@ -1,8 +1,8 @@
-Identificacao.....: 120
-Nome do cliente...: Muller
-Idade do cliente..: 18
-
 Identificacao.....: 110
 Nome do cliente...: Augusto
 Idade do cliente..: 17
+
+Identificacao.....: 120
+Nome do cliente...: Muller
+Idade do cliente..: 18
 

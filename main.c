@@ -13,7 +13,7 @@ int main()
     no_livro_t *lista_livros = NULL;
     FILE *fp = NULL;
 
-    // Abrir arquivos
+    // Abrir arquivos (ler registos)
     fp = fopen("./base_dados/livros.bin", "rb");
     if (fp) {
         ler_dados_livros(fp, &lista_livros);
@@ -31,6 +31,7 @@ int main()
 
         switch (opc) {
 
+            // Cadastros
             case 1: do {
                         opc_1 = cadastros();
 
@@ -47,6 +48,7 @@ int main()
                     } while (opc_1 != 3);
                     break;
 
+            // Relatórios
             case 2: do {
                         opc_2 = relatorios();
 
@@ -62,18 +64,21 @@ int main()
                     } while (opc_2 != 3);
                     break;
 
+            // Exportação de dados
             case 3: do {
                         opc_3 = exportacao_dados();
 
                         switch (opc_3) {
-                            case 1: fp = fopen("livros.txt", "w");
+                            case 1: fp = fopen("./relatorios/livros.txt", "w");
                                     exportar_dados_livros_txt(lista_livros, fp);
-                                    fclose(fp);
-                                    break;
-                            case 2: fp = fopen("clientes.txt", "w");
+                                    fclose(fp);                                  
+                                    fp = fopen("./relatorios/clientes.txt", "w");
                                     exportar_dados_clientes_txt(lista_clientes, fp);
                                     fclose(fp);
                                     break;
+                            
+                            case 2: break;
+
                             case 3: break;
                         }
 
@@ -81,11 +86,17 @@ int main()
 
                     } while (opc_3 != 4);
                     break;
+
+            // Consulta de dados
+            case 4: break;
+
+            // Exclusão de dados
+            case 5: break;
         } 
 
     } while (opc != 0);
 
-    // Abrir arquivos
+    // Abrir arquivos (salvar registos)
     fp = fopen("./base_dados/livros.bin", "wb");
     if (fp) {
         salvar_lista_livros(lista_livros, fp);
@@ -97,9 +108,6 @@ int main()
         salvar_lista_clientes(lista_clientes, fp);
         fclose(fp);
     }
-
-    
-
 
     return 0;
 }

@@ -3,6 +3,7 @@
 
 void remover_enter(char *str);
 void formatar_maiuscula(char *str);
+void limpar_tela();
 
 
 #endif

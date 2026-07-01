@@ -8,6 +8,8 @@ opc_t principal()
     printf("1.Cadastros\n");
     printf("2.Relatorios\n");
     printf("3.Exportacao de dados\n");
+    printf("4.Consulas\n");
+    printf("5.Exclusao de registros\n");
     printf("0.Sair do programa\n");
     printf(":: ");
     scanf("%i", &opc);
@@ -57,4 +59,34 @@ opc_t exportacao_dados()
     getchar();
 
     return opc;
+}
+
+opc_t consultas()
+{
+    opc_t opc;
+
+    printf("1.Consultar livro por nome\n");
+    printf("2.Consultar cliente por nome\n");
+    printf("4.Retornar ao menu principal\n");  
+    printf(":: ");
+    scanf("%i", &opc);
+    getchar();
+
+    return opc;
+
+}
+
+opc_t exclusao()
+{
+    opc_t opc;
+
+    printf("1.Excluir livro\n");
+    printf("2.Excluir cliente\n");
+    printf("3.Retornar ao menu principal\n");  
+    printf(":: ");
+    scanf("%i", &opc);
+    getchar();
+
+    return opc;
+
 }

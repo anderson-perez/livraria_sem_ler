@@ -7,5 +7,7 @@ opc_t principal();
 opc_t relatorios();
 opc_t cadastros();
 opc_t exportacao_dados();
+opc_t consultas();
+opc_t exclusao();
 
 #endif
